@@ -19,7 +19,6 @@ def pre_process(txt, db, ac):
     prescription = [x for x in lxst if x != '']
     #print(prescription)
 
-
     #more manipulation
     db_string_not_yet = ''.join(str(e) for e in db)
     #print(db_string_not_yet)
