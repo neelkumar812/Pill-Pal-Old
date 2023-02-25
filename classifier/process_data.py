@@ -37,17 +37,16 @@ def pre_process(txt, db):
         print(temp)
         #print(db_string)
         for j in temp:
-            item = ' ' + j + ' '
+            item0 = j.replace("[","")
+            item1 = item0.replace("]","")
+            item1n5 = item1.replace(")","")
+            item2 = item1n5.replace("(","")
+            item = ' ' + item2 + ' '
             if item in db_string:
                 print('in db_str')
             else: 
                 print('not in db_str')
 
-    # temp = list(presc.split(' '))
-    # for i in range(len(presc)):
-        
-    #     for j in range(len(temp)):
-    #         if temp()
             
 
         
