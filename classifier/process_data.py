@@ -36,13 +36,13 @@ def pre_process(txt, db, ac):
     acs2 = acs1.replace("]","")
     acs3 = acs2.replace("'","")
     ac_string= acs3.replace(";","")
-    print(ac_string)
+    #print(ac_string)
     #print(db_string)
 
     #string matching for medicine name
     for i in prescription:
         temp = list(i.split(' '))
-        print(temp)
+        #print(temp)
         #print(db_string)
         for j in temp:
             item0 = j.replace("[","")
@@ -51,15 +51,15 @@ def pre_process(txt, db, ac):
             item2 = item1n5.replace("(","")
             item = ' ' + item2 + ' '
             if item in db_string:
-                print('in db_str')
+                #print('in db_str')
                 list1.append(item2)
-            else:
-                print("item not found in db")
+            #else:
+                #print("item not found in db")
 
     #string matching for action word-sentence
     for i in prescription:
         temp = list(i.split(' '))
-        print(temp)
+        #print(temp)
         #print(db_string)
         for j in temp:
             item0 = j.replace("[","")
@@ -68,10 +68,10 @@ def pre_process(txt, db, ac):
             item2 = item1n5.replace("(","")
             item = ' ' + item2 + ' '
             if item in ac_string:
-                print('in db_str')
+                #print('in db_str')
                 final= list1+temp
                 break
-            else: 
-                print("item not found in ac")
+            #else: 
+                #print("item not found in ac")
 
     return final
