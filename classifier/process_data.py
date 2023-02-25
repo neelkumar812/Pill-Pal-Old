@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 def manipulate_data(database):
     df = pd.read_csv(database)
     df['Medicines:'] = df['Medicines:'].str.lower()
@@ -60,7 +59,7 @@ def pre_process(txt, db, ac):
     for i in prescription:
         temp = list(i.split(' '))
         #print(temp)
-        #print(db_string)
+        #pip3 print(db_string)
         for j in temp:
             item0 = j.replace("[","")
             item1 = item0.replace("]","")
@@ -68,10 +67,21 @@ def pre_process(txt, db, ac):
             item2 = item1n5.replace("(","")
             item = ' ' + item2 + ' '
             if item in ac_string:
-                #print('in db_str')
+                print('in db_str')
                 final= list1+temp
                 break
             #else: 
                 #print("item not found in ac")
 
     return final
+
+# def post_process(txt, ac):
+#     temp = ' '.join(str(x) for x in txt)
+#     for i in ac:
+#         before1, _1, after1 = temp.partition(i)
+#         print(before1.split()[-1])
+#     print(after1)
+
+
+
+#     return after1pip[]

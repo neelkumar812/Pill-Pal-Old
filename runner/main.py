@@ -22,10 +22,23 @@ def main():
     ac=pd.read_csv('/Users/i584196/biggestBirds/images/action_words.csv')
     del ac[ac.columns[0]]
     ac_string = ac.values.tolist()
-
+    print(ac_string)
     #run_test
     final = run(text_file, db_string, ac_string) #list to be edited by @rochana
     print(final)
+    #post_process data
+    #output = process_data.post_process(final,ac_string)
     
+    temp_final = ' '.join(str(x) for x in final)
+    keyword1 = 'take'
+    before1, _1, after1 = temp_final.partition(keyword1)
+    print(before1.split()[-1])
+    keyword = 'tab'
+    before, _, after = temp_final.partition(keyword)
+    print(before.split()[-1])
+    print(after.split()[0])
+
+
+
 if __name__ == "__main__":
     main()
