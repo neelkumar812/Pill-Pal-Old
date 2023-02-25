@@ -8,9 +8,8 @@ from classifier import process_data
 
 
 txt_file= pytesseract.image_to_string("/Users/i584196/biggestBirds/images/test_chlor.jpeg")
-concat = process_data.pre_process(txt_file)
-
-process_data.manipulate_data('drug_database.csv', concat)
+db_string = process_data.manipulate_data('drug_database.csv')
+concat = process_data.pre_process(txt_file, db_string)
 
 
 
