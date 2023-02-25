@@ -11,8 +11,9 @@ def manipulate_data(database):
     return db_string
     
 
-def pre_process(txt, db):
+def pre_process(txt, db, ac):
 
+    list1 = []
     #creating list from the string
     txt=txt.lower()
     lxst = list(txt.split('\n'))
@@ -28,10 +29,17 @@ def pre_process(txt, db):
     db2 = db1.replace("]","")
     db3 = db2.replace("'","")
     db_string= db3.replace(";","")
-    
-    print(db_string)
 
-    #string matching for medecine name
+    ac1 = ''.join(str(f) for f in ac)
+    aac = ''.join(ac1)
+    acs1 = aac.replace("["," ")
+    acs2 = acs1.replace("]","")
+    acs3 = acs2.replace("'","")
+    ac_string= acs3.replace(";","")
+    print(ac_string)
+    #print(db_string)
+
+    #string matching for medicine name
     for i in prescription:
         temp = list(i.split(' '))
         print(temp)
@@ -44,21 +52,26 @@ def pre_process(txt, db):
             item = ' ' + item2 + ' '
             if item in db_string:
                 print('in db_str')
+                list1.append(item2)
+            else:
+                print("item not found in db")
+
+    #string matching for action word-sentence
+    for i in prescription:
+        temp = list(i.split(' '))
+        print(temp)
+        #print(db_string)
+        for j in temp:
+            item0 = j.replace("[","")
+            item1 = item0.replace("]","")
+            item1n5 = item1.replace(")","")
+            item2 = item1n5.replace("(","")
+            item = ' ' + item2 + ' '
+            if item in ac_string:
+                print('in db_str')
+                final= list1+temp
+                break
             else: 
-                print('not in db_str')
+                print("item not found in ac")
 
-            
-
-        
-
-
-
-
-
-
-
-
-
-
-
-    return txt
+    return final
