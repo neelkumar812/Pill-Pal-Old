@@ -19,6 +19,7 @@ def main():
     print("-------------Welcome-------------")
     file_name = input("Enter file name: \n")
     text_file = pytesseract.image_to_string("/Users/i584196/biggestBirds/images/{}".format(file_name))
+    print(text_file)
     db_string = process_data.manipulate_data('/Users/i584196/biggestBirds/images/drug_database.csv')
 
     ac=pd.read_csv('/Users/i584196/biggestBirds/images/action_words.csv')
@@ -43,7 +44,7 @@ def main():
 
     list_final.append(before.split()[-1])
     list_final.append(after.split()[0])
-    print(list_final)
+    #print(list_final)
 
     #convert output to json
     jsonStr = json.dumps(list_final)

@@ -6,7 +6,7 @@
 #define BUZZER_PIN 7
 
 void setup() {
-  // put your setup code here, to run once:
+  //put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(LED_PIN_YELLOW, OUTPUT);
   pinMode(LED_PIN_GREEN, OUTPUT);

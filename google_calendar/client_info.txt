@@ -1,5 +1,5 @@
 client ID: 
 1068371688536-o9pbcmu2ugtg77c53f8acn9ini27lkh2.apps.googleusercontent.com
 
-Clinet Secret:
+client secret:
 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

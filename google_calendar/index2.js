@@ -25,11 +25,11 @@ const eventStartTime = new Date()
 const eventEndTime = new Date()
 
 eventStartTime.setDate(eventStartTime.getDate())
-eventStartTime.setHours(eventStartTime.getHours()+12)
+eventStartTime.setHours(eventStartTime.getHours()+6)
 
 // Create a new event end date instance for temp uses in our calendar.
 eventEndTime.setDate(eventEndTime.getDate())
-eventEndTime.setHours(eventEndTime.getHours()+12)
+eventEndTime.setHours(eventEndTime.getHours()+6)
 eventEndTime.setMinutes(eventEndTime.getMinutes() + 45)
 
 var event = {
